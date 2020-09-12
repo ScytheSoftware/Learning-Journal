@@ -1,0 +1,29 @@
+﻿{% extends 'layout.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="new-entry">
+        <h2>New Entry</h2>
+        <form method="POST" action="{{ url_for('save') }}">
+
+            <label for="Title"> Title</label>
+            <input id="title" type="text" name="Title"><br>
+
+            <label for="Date">Date</label>
+            <input id="date" type="date" name="Date"><br>
+
+            <label for="TimeSpent"> Time Spent</label>
+            <input id="time-spent" type="text" name="TimeSpent"><br>
+
+            <label for="WhatILearned">What I Learned</label>
+            <textarea id="what-i-learned" rows="5" name="WhatILearned"></textarea>
+
+            <label for="Resources">Resources to Remember</label>
+            <textarea id="resources-to-remember" rows="5" name="Resources"></textarea>
+
+            <input type="submit" value="Publish Entry" class="button">
+            <a href="{{ url_for('index') }}" class="button button-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

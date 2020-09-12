@@ -1,0 +1,30 @@
+﻿{% extends 'layout.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="entry-list single">
+        <article>
+            <h1>{{ entry.Title.title() }}</h1>
+            <time datetime="{{ entry.Date }}">{{ entry.Date }}</time>
+            <div class="entry">
+                <h3>Time Spent: </h3>
+                <p>{{ entry.TimeSpent }}</p>
+            </div>
+            <div class="entry">
+                <h3>What I Learned:</h3>
+                <p>{{ entry.WhatILearned}}</p>
+            </div>
+            <div class="entry">
+                <h3>Resources to Remember:</h3>
+                <ul>
+                    <li><a href="{{ entry.Resources}}">{{ entry.Resources}}</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</div>
+<div class="edit">
+    <p><a href="{{url_for('edit_entry', Id = entry.Id)}}">Edit Entry</a></p>
+    <p><a href="{{url_for('delete_entry', Id_position = entry.Id)}}">Delete Entry</a></p>
+</div>
+{% endblock %}
