@@ -1,0 +1,2 @@
+pip install peewee #3.13.3
+pip install flask #1.1.2
