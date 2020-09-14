@@ -1,0 +1,18 @@
+﻿{% extends 'layout.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="entry-list">
+            <article>
+                <h2>Create a new entry!</h2>
+            </article>
+            {% for entry in stream_entries %}
+            <article>
+                <h2><a href="{{ url_for('detail', Id=entry.Id )}}">{{entry.Title.title() }}</a></h2>
+                <time datetime="{{entry.Date}}">{{entry.Date}}</time>
+            </article>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
